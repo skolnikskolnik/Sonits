@@ -19,7 +19,7 @@ pwrdLength = parseInt(pwrdLength);
 console.log(pwrdLength);
 
 //Validate that length is between 8 and 128
-var validLength = true;
+var validLength = false;
 if (pwrdLength >= 8 && pwrdLength <= 128) {
   validLength = true;
 }
@@ -37,21 +37,22 @@ else {
 }
 
 //type of characters to include - special characters, uppercase, lowercase, numeric(series of yes/no confirms)
-//Asks user if they want special characters
-var specChar = confirm("Do you want special characters?");
-console.log("Wants special characters: " + specChar);
+//Asks if user wants lowercase letters
+var lowerCase = confirm("Do you want lower case letters?");
+console.log("Wants upper case letters: " + lowerCase);
 
 //Asks if user wants uppercase letters
 var upperCase = confirm("Do you want upper case letters?");
 console.log("Wants upper case letters: " + upperCase);
 
-//Asks if user wants lowercase letters
-var lowerCase = confirm("Do you want lower case letters?");
-console.log("Wants upper case letters: " + lowerCase);
 
 //Asks if user wants numbers
 var numYes = confirm("Do you want numbers?");
 console.log("Wants numbers: " + numYes);
+
+//Asks user if they want special characters
+var specChar = confirm("Do you want special characters?");
+console.log("Wants special characters: " + specChar);
 
 //Validate the user selected at least one character type.
 if (lowerCase == true || specChar == true || upperCase == true || numYes == true) {
@@ -65,15 +66,42 @@ else {
 
 //Now to generate random values (all lower, all lower - just letters)
 
-//Below generates all lower case password
+//Below generates passwords depending on the type of letter chosen
 var justLetters = "abcdefghijklmnopqrstuvwxyz";
 var upLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numList = "0123456789";
 var specList = " !'#$%&'()*+,-./:;<=>?@[\^_`{|}]";
-randomStr(pwrdLength, justLetters);
-randomStr(pwrdLength, upLetters);
-randomStr(pwrdLength, numList);
-randomStr(pwrdLength, specList);
+
+//Putting the strings together based on user input
+var userCharacters = "";
+
+//if they want lower case
+if(lowerCase == true){
+  userCharacters = userCharacters + justLetters;
+}
+else{}
+
+//if they want lower case
+if(upperCase == true){
+  userCharacters = userCharacters + upLetters;
+}
+else{}
+
+//if they want special characters
+if(specChar == true){
+  userCharacters = userCharacters + specList;
+}
+else{}
+
+//if they want numbers
+if(numYes == true){
+  userCharacters = userCharacters + numList;
+}
+else{}
+console.log(userCharacters);
+
+randomStr(pwrdLength,userCharacters);
+
 function randomStr(len, arr) { 
   var anslwr = ''; 
   for (var i = len; i > 0; i--) { 

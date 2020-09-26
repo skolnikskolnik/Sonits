@@ -67,7 +67,13 @@ else {
 
 //Below generates all lower case password
 var justLetters = "abcdefghijklmnopqrstuvwxyz";
-randomStr(pwrdLength, justLetters)
+var upLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numList = "0123456789";
+var specList = " !'#$%&'()*+,-./:;<=>?@[\^_`{|}]";
+randomStr(pwrdLength, justLetters);
+randomStr(pwrdLength, upLetters);
+randomStr(pwrdLength, numList);
+randomStr(pwrdLength, specList);
 function randomStr(len, arr) { 
   var anslwr = ''; 
   for (var i = len; i > 0; i--) { 
@@ -75,40 +81,4 @@ function randomStr(len, arr) {
         arr[Math.floor(Math.random() * arr.length)]; 
   } 
   console.log(anslwr);
-} 
-
-//Below generates upper case password
-var upLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-uplrwStr(pwrdLength, upLetters)
-function uplrwStr(len, arr) { 
-  var ansup = ''; 
-  for (var i = len; i > 0; i--) { 
-      ansup +=  
-        arr[Math.floor(Math.random() * arr.length)]; 
-  } 
-  console.log(ansup);
-} 
-
-//Below generates all numbers password
-var numList = "0123456789";
-uplrwStr(pwrdLength, numList)
-function numStr(len, arr) { 
-  var ansnum = ''; 
-  for (var i = len; i > 0; i--) { 
-      ansnum +=  
-        arr[Math.floor(Math.random() * arr.length)]; 
-  } 
-  console.log(ansnum);
-} 
-
-//Below generates special characters password
-var specList = " !'#$%&'()*+,-./:;<=>?@[\^_`{|}]";
-specStr(pwrdLength, specList)
-function specStr(len, arr) { 
-  var ansspec = ''; 
-  for (var i = len; i > 0; i--) { 
-      ansspec +=  
-        arr[Math.floor(Math.random() * arr.length)]; 
-  } 
-  console.log(ansspec);
 } 

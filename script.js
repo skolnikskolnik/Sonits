@@ -55,13 +55,12 @@ var specChar = confirm("Do you want special characters?");
 console.log("Wants special characters: " + specChar);
 
 //Validate the user selected at least one character type.
-if (lowerCase == true || specChar == true || upperCase == true || numYes == true) {
-  console.log("User selected one type");
-}
-else {
-  console.log("They need to start over" + inputValid);
+if (lowerCase == false && upperCase == false && numYes == false && specChar == false) {
+  console.log("They need to start over");
   alert("You must start over, selecting at least one type of character");
   window.location.href = "index.html";
+}
+else {
 }
 
 //Now to generate random values (all lower, all lower - just letters)
@@ -98,9 +97,9 @@ if(numYes == true){
   userCharacters = userCharacters + numList;
 }
 else{}
-console.log(userCharacters);
 
 randomStr(pwrdLength,userCharacters);
+//This generates a variable called anslwr that is the password
 
 function randomStr(len, arr) { 
   var anslwr = ''; 

@@ -28,17 +28,15 @@ else {
 }
 console.log("Length is valid: " + validLength);
 
-if(validLength == true){
+if (validLength == true) {
 
 }
-else{
+else {
   alert("You must enter a number between 8 and 128, when it pops up, enter such a number");
   window.location.href = "index.html";
 }
 
 //type of characters to include - special characters, uppercase, lowercase, numeric(series of yes/no confirms)
-var typeChar = ["special characters", "uppercase", "lowercase", "numeric"];
-
 //Asks user if they want special characters
 var specChar = confirm("Do you want special characters?");
 console.log("Wants special characters: " + specChar);
@@ -47,18 +45,47 @@ console.log("Wants special characters: " + specChar);
 var upperCase = confirm("Do you want upper case letters?");
 console.log("Wants upper case letters: " + upperCase);
 
+//Asks if user wants lowercase letters
+var lowerCase = confirm("Do you want upper case letters?");
+console.log("Wants upper case letters: " + lowerCase);
+
 //Asks if user wants numbers
 var numYes = confirm("Do you want upper case letters?");
 console.log("Wants numbers: " + numYes);
 
 //Validate the user selected at least one character type.
-if (typeChar == true || specChar == true || upperCase == true || numYes == true) {
+if (lowerCase == true || specChar == true || upperCase == true || numYes == true) {
   console.log("User selected one type");
 }
 else {
-  console.log("They need to start over");
+  console.log("They need to start over" + inputValid);
   alert("You must start over, selecting at least one type of character");
   window.location.href = "index.html";
 }
 
+//Now to generate random values
+
+//Below generates all lower case password
+var justLetters = "abcdefghijklmnopqrstuvwxyz";
+randomStr(pwrdLength, justLetters)
+function randomStr(len, arr) { 
+  var anslwr = ''; 
+  for (var i = len; i > 0; i--) { 
+      anslwr +=  
+        arr[Math.floor(Math.random() * arr.length)]; 
+  } 
+  console.log(anslwr);
+} 
+
+//Below generates lower/upper case password
+var uplwrLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+uplrwStr(pwrdLength, uplwrLetters)
+function uplrwStr(len, arr) { 
+  var ansup = ''; 
+  for (var i = len; i > 0; i--) { 
+      ansup +=  
+        arr[Math.floor(Math.random() * arr.length)]; 
+  } 
+  console.log(ansup);
+} 
 

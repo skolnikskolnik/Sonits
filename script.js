@@ -20,10 +20,27 @@ console.log(pwrdLength);
 
 //Validate that length is between 8 and 128
 var validLength = true;
-if(pwrdLength >= 8 && pwrdLength <= 128){
+if (pwrdLength >= 8 && pwrdLength <= 128) {
   validLength = true;
 }
-else{
+else {
   validLength = false;
 }
-console.log(validLength);
+console.log("Length is valid: " + validLength);
+
+//type of characters to include - special characters, uppercase, lowercase, numeric(series of yes/no confirms)
+var typeChar = ["special characters", "uppercase", "lowercase", "numeric"];
+
+//Asks user if they want special characters
+var specChar = confirm("Do you want special characters?");
+console.log("Wants special characters: " + specChar);
+
+//Asks if user wants uppercase letters
+var upperCase = confirm("Do you want upper case letters?");
+console.log("Wants upper case letters: " + upperCase);
+
+//Asks if user wants numbers
+var numYes = confirm("Do you want upper case letters?");
+console.log("Wants numbers: " + numYes);
+
+

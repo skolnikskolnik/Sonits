@@ -46,11 +46,11 @@ var upperCase = confirm("Do you want upper case letters?");
 console.log("Wants upper case letters: " + upperCase);
 
 //Asks if user wants lowercase letters
-var lowerCase = confirm("Do you want upper case letters?");
+var lowerCase = confirm("Do you want lower case letters?");
 console.log("Wants upper case letters: " + lowerCase);
 
 //Asks if user wants numbers
-var numYes = confirm("Do you want upper case letters?");
+var numYes = confirm("Do you want numbers?");
 console.log("Wants numbers: " + numYes);
 
 //Validate the user selected at least one character type.
@@ -63,7 +63,7 @@ else {
   window.location.href = "index.html";
 }
 
-//Now to generate random values
+//Now to generate random values (all lower, all lower - just letters)
 
 //Below generates all lower case password
 var justLetters = "abcdefghijklmnopqrstuvwxyz";
@@ -77,9 +77,9 @@ function randomStr(len, arr) {
   console.log(anslwr);
 } 
 
-//Below generates lower/upper case password
-var uplwrLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-uplrwStr(pwrdLength, uplwrLetters)
+//Below generates upper case password
+var upLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+uplrwStr(pwrdLength, upLetters)
 function uplrwStr(len, arr) { 
   var ansup = ''; 
   for (var i = len; i > 0; i--) { 
@@ -89,3 +89,26 @@ function uplrwStr(len, arr) {
   console.log(ansup);
 } 
 
+//Below generates all numbers password
+var numList = "0123456789";
+uplrwStr(pwrdLength, numList)
+function numStr(len, arr) { 
+  var ansnum = ''; 
+  for (var i = len; i > 0; i--) { 
+      ansnum +=  
+        arr[Math.floor(Math.random() * arr.length)]; 
+  } 
+  console.log(ansnum);
+} 
+
+//Below generates special characters password
+var specList = " !'#$%&'()*+,-./:;<=>?@[\^_`{|}]";
+specStr(pwrdLength, specList)
+function specStr(len, arr) { 
+  var ansspec = ''; 
+  for (var i = len; i > 0; i--) { 
+      ansspec +=  
+        arr[Math.floor(Math.random() * arr.length)]; 
+  } 
+  console.log(ansspec);
+} 

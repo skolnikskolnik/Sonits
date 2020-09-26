@@ -28,6 +28,14 @@ else {
 }
 console.log("Length is valid: " + validLength);
 
+if(validLength == true){
+
+}
+else{
+  alert("You must enter a number between 8 and 128, when it pops up, enter such a number");
+  window.location.href = "index.html";
+}
+
 //type of characters to include - special characters, uppercase, lowercase, numeric(series of yes/no confirms)
 var typeChar = ["special characters", "uppercase", "lowercase", "numeric"];
 
@@ -42,5 +50,15 @@ console.log("Wants upper case letters: " + upperCase);
 //Asks if user wants numbers
 var numYes = confirm("Do you want upper case letters?");
 console.log("Wants numbers: " + numYes);
+
+//Validate the user selected at least one character type.
+if (typeChar == true || specChar == true || upperCase == true || numYes == true) {
+  console.log("User selected one type");
+}
+else {
+  console.log("They need to start over");
+  alert("You must start over, selecting at least one type of character");
+  window.location.href = "index.html";
+}
 
 

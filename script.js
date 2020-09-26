@@ -14,6 +14,16 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 //Prompts user to enter the length of the password
-      var pwrdLength = prompt("How many characters?");
-      pwrdLength = parseInt(pwrdLength);
-      console.log(pwrdLength);
+var pwrdLength = prompt("How many characters?");
+pwrdLength = parseInt(pwrdLength);
+console.log(pwrdLength);
+
+//Validate that length is between 8 and 128
+var validLength = true;
+if(pwrdLength >= 8 && pwrdLength <= 128){
+  validLength = true;
+}
+else{
+  validLength = false;
+}
+console.log(validLength);

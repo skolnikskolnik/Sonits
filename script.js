@@ -45,8 +45,6 @@ if (lowerCase == false && upperCase == false && numYes == false && specChar == f
   alert("You must start over, selecting at least one type of character");
   window.location.href = "index.html";
 }
-else {
-}
 
 //Now to generate random values (all lower, all lower - just letters)
 
@@ -60,54 +58,47 @@ var specList = " !'#$%&'()*+,-./:;<=>?@[\^_`{|}]";
 var userCharacters = "";
 
 //if they want lower case
-if(lowerCase == true){
+if (lowerCase == true) {
   userCharacters = userCharacters + justLetters;
 }
-else{}
 
 //if they want lower case
-if(upperCase == true){
+if (upperCase == true) {
   userCharacters = userCharacters + upLetters;
 }
-else{}
 
 //if they want special characters
-if(specChar == true){
+if (specChar == true) {
   userCharacters = userCharacters + specList;
 }
-else{}
 
 //if they want numbers
-if(numYes == true){
+if (numYes == true) {
   userCharacters = userCharacters + numList;
 }
-else{}
+
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
+  var genP = '';
+  //Makes a variable of an empty string
+  for (var i = pwrdLength; i > 0; i--) {
+    //Runs as many times as the user selected
+    genP +=
+      userCharacters[Math.floor(Math.random() * userCharacters.length)];
+  }
+  console.log(genP);
+  var password = genP;
+  var passwordText = document.querySelector("#password");
+//This creates a variable passwordText that is the first element of password id ("Your secure password")
   passwordText.value = password;
+  //This changes the value of a text field from what it was before to password 
 
 }
 
-// Add event listener to generate button
+// Add event listener to generate button - when clicked, writePassword is run, generating the password (can currently see it in the console log)
 generateBtn.addEventListener("click", writePassword);
-
-
-//This generates a variable called anslwr that is the password
-var password = randomStr();
-
-function randomStr() { 
-  var genPasswd = ''; 
-  for (var i = pwrdLength; i > 0; i--) { 
-      genPasswd +=  
-        userCharacters[Math.floor(Math.random() * userCharacters.length)]; 
-  } 
-  console.log(genPasswd);
-} 

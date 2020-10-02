@@ -14,7 +14,7 @@ else {
 
 if (validLength !== true){
   alert("You must enter a number between 8 and 128, when it pops up, enter such a number");
-  window.location.href = "index.html";
+  reload();
 }
 
 //type of characters to include - special characters, uppercase, lowercase, numeric(series of yes/no confirms)
@@ -37,7 +37,7 @@ console.log("Wants special characters: " + specChar);
 //Validate the user selected at least one character type.
 if (lowerCase == false && upperCase == false && numYes == false && specChar == false) {
   alert("You must start over, selecting at least one type of character");
-  window.location.href = "index.html";
+  reload();
 }
 
 //Now to generate random values (all lower, all lower - just letters)
@@ -90,7 +90,6 @@ function writePassword() {
 //This creates a variable passwordText that is the first element of password id ("Your secure password")
   passwordText.value = password;
   //This changes the value of a text field from what it was before to password 
-
 }
 
 // Add event listener to generate button - when clicked, writePassword is run, generating the password (can currently see it in the console log)
